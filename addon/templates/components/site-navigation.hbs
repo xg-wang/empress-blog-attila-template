@@ -1,0 +1,31 @@
+<nav id="menu">
+	<a class="close-button">{{t "Close"}}</a>
+	<div class="nav-wrapper">
+		<p class="nav-label">{{t "Menu"}}</p>
+		<ul>
+      {{#each blog.navigation as |navigation|}}
+        <li class="nav-{{navigation.label}} {{if current 'active'}}" role="presentation">
+          {{#if navigation.id}}
+            {{#link-to navigation.route navigation.id}} {{navigation.label}} {{/link-to}}
+          {{else if navigation.route}}
+            {{#link-to navigation.route}} {{navigation.label}} {{/link-to}}
+          {{else if navigation.link}}
+            <a href="{{navigation.link}}"> {{navigation.label}} </a>
+          {{/if}}
+        </li>
+      {{/each}}
+
+			{{#if blog.twitter}}
+			<li class="nav-twitter"><a href="https://twitter.com/{{blog.twitter}}" title="{{blog.twitter}}"><i class="ic ic-twitter"></i> Twitter</a></li>
+			{{/if}}
+			{{#if blog.facebook}}
+			<li class="nav-facebook"><a href="{{facebook_url}}" title="{{@blog.facebook}}"><i class="ic ic-facebook"></i> Facebook</a></li>
+			{{/if}}
+			{{#if labs.subscribers}}
+			<li class="nav-subscribe"><a href="{{blog.url}}/subscribe/"><i class="ic ic-mail"></i> {{t "Subscribe"}}</a></li>
+			{{else if rssFeed}}
+			<li class="nav-rss"><a href="{{rssFeed}}"><i class="ic ic-rss"></i> {{t "Subscribe"}}</a></li>
+			{{/if}}
+		</ul>
+	</div>
+</nav>

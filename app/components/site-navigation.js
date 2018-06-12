@@ -1,0 +1,1 @@
+export { default } from 'ember-ghost-attila-template/components/site-navigation';

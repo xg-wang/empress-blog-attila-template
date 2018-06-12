@@ -1,0 +1,137 @@
+{{!< default}}
+
+<div class="progress-container">
+	<span class="progress-bar"></span>
+</div>
+
+<header id="post-header" class="{{if model.post.image 'has-cover'}}">
+	<div class="inner">
+		<nav id="navigation">
+			{{#if blog.logo}}
+			<span class="blog-logo">
+        {{#link-to 'index'}}
+				    <img src="{{blog.logo}}" alt="{{t "Blog Logo"}}" />
+        {{/link-to}}
+			</span>
+			{{else}}
+			<span id="home-button" class="nav-button">
+        {{#link-to 'index' class="home-button" title="{{t 'Home'}}"}}
+          <i class="ic ic-arrow-left"></i> {{t "Home"}}
+        {{/link-to}}
+			</span>
+			{{/if}}
+			{{#if blog.navigation}}
+			  {{menu-button}}
+			{{/if}}
+		</nav>
+		<h1 class="post-title">{{model.post.title}}</h1>
+    {{#if model.post.image}}
+      {{image-attribution meta=model.post.imageMeta}}
+    {{/if}}
+		{{!-- <span class="post-meta">{{authors separator=", "}} | <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></span> --}}
+		{{#if feature_image}}{{/if}}
+    {{#if model.post.image}}
+      <div class="post-cover cover" style="background-image: url('{{url model.post.image}}');"></div>
+    {{/if}}
+	</div>
+</header>
+
+<main class="content" role="main">
+	<article class="{{post_class}}">
+		<div class="inner">
+
+			<section class="post-content">
+				{{{model.post.html}}}
+			</section>
+
+			<section class="post-info">
+
+				<div class="post-share">
+					<a class="twitter" href="https://twitter.com/share?text={{model.post.title}}&url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+						<i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+					</a>
+					<a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+						<i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+					</a>
+					<a class="googleplus" href="https://plus.google.com/share?url={{url absolute="true"}}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+						<i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+					</a>
+					<div class="clear"></div>
+				</div>
+
+				<aside class="post-tags">
+					{{!-- {{tags separator=" "}} --}}
+				</aside>
+
+				<div class="clear"></div>
+
+
+						<aside class="post-author">
+							<figure class="post-author-avatar avatar">
+								{{#if model.post.author.image}}
+									<img src="{{model.post.author.image}}" alt="{{model.post.author.name}}" />
+								{{/if}}
+							</figure>
+							<div class="post-author-bio">
+								<h4 class="post-author-name">{{#link-to 'author' model.post.author.id}}{{model.post.author.name}}{{/link-to}}</h4>
+								{{#if model.post.author.bio}}
+									<p class="post-author-about">{{model.post.author.bio}}</p>
+								{{/if}}
+								{{#if model.post.author.location}}
+									<span class="post-author-location"><i class="ic ic-location"></i> {{model.post.author.location}}</span>
+								{{/if}}
+								{{#if model.post.author.website}}
+									<span class="post-author-website"><i class="ic ic-link"></i> <a href="{{model.post.author.website}}">{{t "Website"}}</a></span>
+								{{/if}}
+								{{#if model.post.author.twitter}}
+									<span class="post-author-twitter"><i class="ic ic-twitter"></i> <a target="_blank" href="https://twitter.com/{{model.post.author.twitter}}">Twitter</a></span>
+								{{/if}}
+								{{#if model.post.author.facebook}}
+									<span class="post-author-facebook"><i class="ic ic-facebook"></i> <a target="_blank" href="https://facebook.com/{{model.post.author.facebook}}">Facebook</a></span>
+								{{/if}}
+							</div>
+							<div class="clear"></div>
+						</aside>
+
+			</section>
+
+
+			{{!-- <section class="post-comments">
+				<a id="show-disqus" class="post-comments-activate">{{t "Show Comments"}}</a>
+			    <div id="disqus_thread"></div>
+			</section> --}}
+
+            {{#if @labs.subscribers}}
+            <section class="post-subscribe">
+                {{subscribe_form placeholder=(t "Your email address") form_class="post-subscribe-form" input_class="post-subscribe-input" button_class="post-subscribe-button"}}
+                <p>{{t "Get the latest posts delivered right to your inbox."}}</p>
+            </section>
+            {{/if}}
+
+			<aside class="post-nav">
+				{{#if nextPost}}
+          {{#link-to 'post' nextPost.id class="post-nav-prev"}}
+						<section class="post-nav-teaser">
+							<i class="ic ic-arrow-right"></i>
+							<h2 class="post-nav-title">{{nextPost.title}}</h2>
+							<p class="post-nav-excerpt">{{excerpt nextPost.html words="12"}}&hellip;</p>
+						</section>
+					{{/link-to}}
+				{{/if}}
+
+				{{#if prevPost}}
+					{{#link-to 'post' prevPost.id class="post-nav-next"}}
+						<section class="post-nav-teaser">
+							<i class="ic ic-arrow-left"></i>
+							<h2 class="post-nav-title">{{prevPost.title}}</h2>
+							<p class="post-nav-excerpt">{{excerpt prevPost.html words="12"}}&hellip;</p>
+						</section>
+					{{/link-to}}
+				{{/if}}
+				<div class="clear"></div>
+			</aside>
+
+
+		</div>
+	</article>
+</main>

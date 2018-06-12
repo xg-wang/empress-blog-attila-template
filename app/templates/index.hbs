@@ -1,0 +1,32 @@
+{{!< default}}
+<header id="blog-header" class="{{if blog.coverImage 'has-cover'}}">
+	<div class="inner">
+		<nav id="navigation">
+			{{#if blog.logo}}
+			<span class="blog-logo">
+				<a href="{{blog.url}}"><img src="{{blog.logo}}" alt="{{t "Blog Logo"}}" /></a>
+			</span>
+			{{/if}}
+			{{#if blog.navigation}}
+		    {{menu-button}}
+			{{/if}}
+		</nav>
+		<h1 class="blog-name"><a href="{{blog.url}}">{{blog.title}}</a></h1>
+		{{#if blog.description}}
+		<span class="blog-description">{{blog.description}}</span>
+		{{/if}}
+		{{#if blog.cover_image}}
+		<div class="blog-cover cover" style="background-image: url('{{img_url blog.cover_image}}');"></div>
+		{{/if}}
+	</div>
+</header>
+
+<div id="index" class="container">
+
+	<main class="content" role="main">
+
+		{{post-loop posts=model}}
+
+	</main>
+
+</div>

@@ -1,0 +1,22 @@
+export default {
+    "% Post": "% innlegg",
+    "% Posts": "% innlegg",
+    "Blog Logo": "Blogg logo",
+    "Close": "Lukk",
+    "Get the latest posts delivered right to your inbox.": "Få de siste innleggene rett i innboksen",
+    "Home": "Hjem",
+    "Menu": "Meny",
+    "Newer Posts": "Nyere",
+    "No Posts": "Ingen innlegg",
+    "Older Posts": "Gamlere",
+    "Posts": "Innlegg",
+    "Published with": "Bygget med",
+    "Show Comments": "Vis kommentarer",
+    "Subscribe": "Abonner",
+    "Theme": "Tema",
+    "Website": "Nettside",
+    "Your email address": "Din e-post adresse",
+    "by": "av",
+    "on ": "i ",
+    "and": "og"
+}
