@@ -1,7 +1,7 @@
 {
   "name": "ember-ghost-attila-template",
   "description": "Static Site Template designed to work with Ember Ghost",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "keywords": [
     "ember-addon",
     "ember-ghost",
