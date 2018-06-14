@@ -74,8 +74,8 @@
 							</figure>
 							<div class="post-author-bio">
 								<h4 class="post-author-name">{{#link-to 'author' model.post.author.id}}{{model.post.author.name}}{{/link-to}}</h4>
-								{{#if model.post.author.bio}}
-									<p class="post-author-about">{{model.post.author.bio}}</p>
+								{{#if model.post.author.content}}
+									<p class="post-author-about">{{markdown-to-html model.post.author.content.content}}</p>
 								{{/if}}
 								{{#if model.post.author.location}}
 									<span class="post-author-location"><i class="ic ic-location"></i> {{model.post.author.location}}</span>

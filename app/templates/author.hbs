@@ -1,26 +1,27 @@
-{{!< default}}
-
 <header id="blog-header" class="{{if model.coverImage 'has-cover'}}">
 	<div class="inner">
 		<nav id="navigation">
-			{{#if @blog.logo}}
+			{{#if blog.logo}}
 			<span class="blog-logo">
-				<a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{t "Blog Logo"}}" /></a>
+				<a href="{{blog.url}}"><img src="{{blog.logo}}" alt="{{t "Blog Logo"}}" /></a>
 			</span>
 			{{else}}
-			<span id="home-button" class="nav-button">
-				<a class="home-button" href="{{@blog.url}}" title="{{t "Home"}}"><i class="ic ic-arrow-left"></i> {{t "Home"}}</a>
+      <span id="home-button" class="nav-button">
+        {{#link-to 'index' class="home-button" title="{{t 'Home'}}"}}
+          <i class="ic ic-arrow-left"></i> {{t "Home"}}
+        {{/link-to}}
 			</span>
 			{{/if}}
-			{{#if @blog.navigation}}
+			{{#if blog.navigation}}
 		    {{menu-button}}
 			{{/if}}
 		</nav>
-		{{#if cover_image}}
-		<div class="blog-cover cover" style="background-image: url('{{img_url cover_image}}');"></div>
+
+		{{#if model.coverImage}}
+		<div class="blog-cover cover" style="background-image: url('{{model.coverImage}}');"></div>
 		{{else}}
-		{{#if @blog.cover_image}}
-		<div class="blog-cover cover" style="background-image: url('{{img_url @blog.cover}}');"></div>
+		{{#if blog.cover_image}}
+		<div class="blog-cover cover" style="background-image: url('{{img_url blog.cover}}');"></div>
 		{{/if}}
 		{{/if}}
 	</div>
@@ -31,27 +32,27 @@
 
 		<aside class="post-author">
 			<figure class="post-author-avatar avatar">
-				{{#if profile_image}}
-					<img src="{{profile_image}}" alt="{{name}}" />
+				{{#if model.image}}
+					<img src="{{model.image}}" alt="{{model.name}}" />
 				{{/if}}
 			</figure>
 			<div class="post-author-bio">
-				<h2 class="post-author-name">{{name}}</h2>
-				{{#if bio}}
-					<p class="post-author-about">{{{bio}}}</p>
+				<h2 class="post-author-name">{{model.name}}</h2>
+				{{#if model.content}}
+					<p class="post-author-about">{{markdown-to-html model.content}}</p>
 				{{/if}}
 				{{!-- <span class="post-author-stats"><i class="ic ic-pencil"></i> {{plural ../pagination.total empty=(t "No Posts") singular=(t "% Post") plural=(t "% Posts")}}</span> --}}
-				{{#if location}}
-					<span class="post-author-location"><i class="ic ic-location"></i> {{location}}</span>
+				{{#if model.location}}
+					<span class="post-author-location"><i class="ic ic-location"></i> {{model.location}}</span>
 				{{/if}}
-				{{#if website}}
-					<span class="post-author-website"><i class="ic ic-link"></i> <a href="{{website}}">{{t "Website"}}</a></span>
+				{{#if model.website}}
+					<span class="post-author-website"><i class="ic ic-link"></i> <a href="{{model.website}}">{{t "Website"}}</a></span>
 				{{/if}}
-				{{#if twitter}}
-					<span class="post-author-twitter"><i class="ic ic-twitter"></i> <a target="_blank" href="https://twitter.com/{{twitter}}">Twitter</a></span>
+				{{#if model.twitter}}
+					<span class="post-author-twitter"><i class="ic ic-twitter"></i> <a target="_blank" href="https://twitter.com/{{model.twitter}}">Twitter</a></span>
 				{{/if}}
-				{{#if facebook}}
-					<span class="post-author-facebook"><i class="ic ic-facebook"></i> <a target="_blank" href="https://facebook.com/{{facebook}}">Facebook</a></span>
+				{{#if model.facebook}}
+					<span class="post-author-facebook"><i class="ic ic-facebook"></i> <a target="_blank" href="https://facebook.com/{{model.facebook}}">Facebook</a></span>
 				{{/if}}
 			</div>
 			<div class="clear"></div>
@@ -63,7 +64,7 @@
 
 	<main class="content" role="main">
 
-		{{post-loop posts=posts}}
+		{{post-loop posts=model.posts}}
 
 	</main>
 

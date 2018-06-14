@@ -1,25 +1,23 @@
-{{!< default}}
-
-{{#post}}
-
 <header id="post-header" class="{{if model.post.image 'has-cover'}}">
 	<div class="inner">
 		<nav id="navigation">
-			{{#if @blog.logo}}
+			{{#if blog.logo}}
 			<span class="blog-logo">
-				<a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{t "Blog Logo"}}" /></a>
+				<a href="{{blog.url}}"><img src="{{blog.logo}}" alt="{{t "Blog Logo"}}" /></a>
 			</span>
 			{{else}}
-			<span id="home-button" class="nav-button">
-				<a class="home-button" href="{{@blog.url}}" title="{{t "Home"}}"><i class="ic ic-arrow-left"></i> Home</a>
+      <span id="home-button" class="nav-button">
+        {{#link-to 'index' class="home-button" title="{{t 'Home'}}"}}
+          <i class="ic ic-arrow-left"></i> {{t "Home"}}
+        {{/link-to}}
 			</span>
 			{{/if}}
-			{{#if @blog.navigation}}
+			{{#if blog.navigation}}
 			  {{menu-button}}
 			{{/if}}
 		</nav>
-		<h1 class="post-title">{{{title}}}</h1>
-		{{#if cover_image}}<div class="post-cover cover" style="background-image: url('{{img_url cover_image}}');"></div>{{/if}}
+		<h1 class="post-title">{{model.title}}</h1>
+		{{#if model.image}}<div class="post-cover cover" style="background-image: url('{{model.image}}');"></div>{{/if}}
 	</div>
 </header>
 
@@ -28,11 +26,9 @@
 		<div class="inner">
 
 			<section class="post-content">
-				{{content}}
+				{{markdown-to-html model.content}}
 			</section>
 
 		</div>
 	</article>
 </main>
-
-{{/post}}

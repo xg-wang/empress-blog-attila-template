@@ -1,13 +1,10 @@
 export default {
-    "% Post": "% Post",
-    "% Posts": "% Posts",
     "Blog Logo": "Blog Logo",
     "Close": "Schließen",
     "Get the latest posts delivered right to your inbox.": "Get the latest posts delivered right to your inbox.",
     "Home": "Start",
     "Menu": "Menü",
     "Newer Posts": "Neuere Beiträge",
-    "No Posts": "No Posts",
     "Older Posts": "Ältere Beiträge",
     "Page {page} of {pages}": "Seite {page} von {pages}",
     "Posts": "Beiträge",

@@ -20,7 +20,15 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+    blog: {
+      title: "ember ghost attila template",
+      description: "The Attila theme for Ember Ghost",
+      navigation: [
+        { label: 'Home', route: 'index' },
+        { label: 'Built by Stone Circle', route: 'page', id: 'stone-circle' }
+      ]
+    },
   };
 
   if (environment === 'development') {

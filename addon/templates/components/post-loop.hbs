@@ -2,7 +2,7 @@
 	{{pagination}}
 </div>
 
-{{#each posts as |post|}}
+{{#each (sort-by 'date:desc' posts) as |post|}}
 
 <article class="post">
 	<div class="inner">
