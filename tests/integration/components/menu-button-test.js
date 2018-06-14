@@ -12,15 +12,6 @@ module('Integration | Component | menu-button', function(hooks) {
 
     await render(hbs`{{menu-button}}`);
 
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#menu-button}}
-        template block text
-      {{/menu-button}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.equal(this.element.textContent.trim(), 'Menu');
   });
 });

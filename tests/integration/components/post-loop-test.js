@@ -13,14 +13,5 @@ module('Integration | Component | post-loop', function(hooks) {
     await render(hbs`{{post-loop}}`);
 
     assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#post-loop}}
-        template block text
-      {{/post-loop}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });

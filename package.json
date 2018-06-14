@@ -36,10 +36,11 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
+    "broccoli-funnel": "^2.0.1",
     "ember-cli-babel": "^6.6.0",
     "ember-cli-htmlbars": "^2.0.1",
     "ember-cli-htmlbars-inline-precompile": "^1.0.0",
-    "ember-cli-sass": "^7.1.7",
+    "ember-cli-sass": "^7.2.0",
     "ember-composable-helpers": "^2.1.0",
     "ember-i18n": "^5.2.1"
   },

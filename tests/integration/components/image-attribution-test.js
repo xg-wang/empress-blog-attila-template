@@ -13,14 +13,5 @@ module('Integration | Component | image-attribution', function(hooks) {
     await render(hbs`{{image-attribution}}`);
 
     assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#image-attribution}}
-        template block text
-      {{/image-attribution}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });
