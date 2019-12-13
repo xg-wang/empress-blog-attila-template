@@ -1,14 +1,12 @@
 export default {
-    "% Post": "% innlegg",
-    "% Posts": "% innlegg",
     "Blog Logo": "Blogg logo",
     "Close": "Lukk",
     "Get the latest posts delivered right to your inbox.": "Få de siste innleggene rett i innboksen",
     "Home": "Hjem",
     "Menu": "Meny",
     "Newer Posts": "Nyere",
-    "No Posts": "Ingen innlegg",
     "Older Posts": "Gamlere",
+    "Page {page} of {pages}": "Side {page} av {pages}",
     "Posts": "Innlegg",
     "Published with": "Bygget med",
     "Show Comments": "Vis kommentarer",
@@ -18,5 +16,12 @@ export default {
     "Your email address": "Din e-post adresse",
     "by": "av",
     "on ": "i ",
-    "and": "og"
+    "and": "og",
+    "No Posts": "Ingen innlegg",
+    "% Post": "% innlegg",
+    "% Posts": "% innlegg",
+    "This post was a collaboration between:": "Dette innlegget var et samarbeid mellom:",
+    "youremail@example.com": "dinepost@eksempel.com",
+    "1 min read": "1 min lest",
+    "% min read": "% min lest"
 }

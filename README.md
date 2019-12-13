@@ -9,6 +9,8 @@ For more information on how to use this system [read the Ember Ghost documentati
 
 If you want to see a demo of this template you can checkout [https://ember-ghost-attila-template.stonecircle.io/](https://ember-ghost-attila-template.stonecircle.io/)
 
+Original Demo: [attila.zutrinken.com](https://attila.zutrinken.com/)
+
 You do not need to be a web developer to be able to use this system. You just write markdown files
 and the rest of the work is performed by EmberJS' build system.
 
@@ -28,3 +30,7 @@ It will ask you if you want to update the `index.html` file and you should say y
 
 If you want to see the blog system running on your local machine just run `npm start` and you will
 be able to navigate to  [http://localhost:4200](http://localhost:4200) to see the blog in action.
+
+## Copyright & License
+
+Copyright (C) 2015-2019 Peter Amende - Released under the [MIT License](https://github.com/zutrinken/attila/blob/master/LICENSE).

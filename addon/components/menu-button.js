@@ -2,7 +2,7 @@ import Component from '@ember/component';
 import layout from '../templates/components/menu-button';
 
 export default Component.extend({
-  classNames: ['nav-button', 'menu-button'],
+  classNames: ['nav-button'],
   tagName: 'span',
   layout,
 

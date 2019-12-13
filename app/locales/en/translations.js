@@ -20,5 +20,8 @@ export default {
     "No Posts": "No Posts",
     "% Post": "% Post",
     "% Posts": "% Posts",
-    "This post was a collaboration between:": "This post was a collaboration between:"
+    "This post was a collaboration between:": "This post was a collaboration between:",
+    "youremail@example.com": "youremail@example.com",
+    "1 min read": "1 min read",
+    "% min read": "% min read"
 }

@@ -1,8 +1,8 @@
 export default {
     "Blog Logo": "Blog Logo",
     "Close": "Schließen",
-    "Get the latest posts delivered right to your inbox.": "Get the latest posts delivered right to your inbox.",
-    "Home": "Start",
+    "Get the latest posts delivered right to your inbox.": "Empfange die neuesten Posts direkt in deinem Posteingang.",
+    "Home": "Startseite",
     "Menu": "Menü",
     "Newer Posts": "Neuere Beiträge",
     "Older Posts": "Ältere Beiträge",
@@ -20,5 +20,8 @@ export default {
     "No Posts": "Keine Beiträge",
     "% Post": "% Beitrag",
     "% Posts": "% Beiträge",
-    "This post was a collaboration between:": "Dieser Beitrag war eine Zusammenarbeit von:"
+    "This post was a collaboration between:": "Dieser Beitrag war eine Zusammenarbeit von:",
+    "youremail@example.com": "deine@emailadresse.de",
+    "1 min read": "Lesezeit: 1 Min.",
+    "% min read": "Lesezeit: % Min."
 }
